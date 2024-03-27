@@ -21,7 +21,8 @@ void execute(char *opcode, stack_t **stack, unsigned int line_number)
 		{"sub", sub},
 		{"div", stack_div},
 		{"mul", mul},
-		{"mod", mod}
+		{"mod", mod},
+		{"#", comment},
 	};
 
 	for (i = 0; i < sizeof(instructions) / sizeof(instruction_t); i++)
