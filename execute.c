@@ -16,6 +16,7 @@ void execute(char *opcode, stack_t **stack, unsigned int line_number)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"add", add},
 	};
 
 	for (i = 0; i < sizeof(instructions) / sizeof(instruction_t); i++)
