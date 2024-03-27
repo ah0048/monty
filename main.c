@@ -41,6 +41,7 @@ int main(int argc, char **argv)
 		if (commands[0] == NULL)
 		{
 			free2Darray(commands);
+			line_number++;
 			continue;
 		}
 		if (strcmp(commands[0], "push") == 0 && commands[1])
