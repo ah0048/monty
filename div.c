@@ -13,12 +13,12 @@ void stack_div(stack_t **stack, unsigned int line_number)
 
 	if (*stack == NULL || first->next == NULL)
 	{
-		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
     if (first->n == 0)
     {
-        fprintf(stderr, "L%d: division by zero", line_number);
+        fprintf(stderr, "L%d: division by zero\n", line_number);
         exit(EXIT_FAILURE);
     }
 	second = first->next;
