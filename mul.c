@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * mul -  multiplies the second top element of the stack with the top element of the stack.
+ * mul -  multiplies the first with second
  * @stack: linked list of the data as stack
  * @line_number: line number
  * Return: void
