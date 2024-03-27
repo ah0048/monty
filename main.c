@@ -53,5 +53,6 @@ int main(int argc, char **argv)
 			free2Darray(commands);
     }
 		fclose(file);
+        freelist(stack);
 		return (EXIT_SUCCESS);
 }
