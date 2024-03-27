@@ -31,12 +31,21 @@ int main(int argc, char **argv)
 	}
 	while (fgets(buffer, sizeof(buffer), file) != NULL)
 	{
+		if (buffer[0] == '\n')
+			continue;
 		remove_newline(buffer);
+		if (buffer == NULL)
+			continue;
 		commands = token(buffer);
 		if (commands == NULL)
 		{
 			fprintf(stderr, "Error: malloc failed\n");
 			return (EXIT_FAILURE);
+		}
+		if (commands[0] == NULL)
+		{
+			free2Darray(commands);
+			continue;
 		}
 		if (commands[1])
 		{
