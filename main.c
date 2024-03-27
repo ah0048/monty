@@ -51,8 +51,8 @@ int main(int argc, char **argv)
 			execute(commands[0], &stack, line_number);
 			line_number++;
 			free2Darray(commands);
-    }
+	}
 		fclose(file);
-        freelist(stack);
+		freelist(stack);
 		return (EXIT_SUCCESS);
 }
