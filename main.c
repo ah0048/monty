@@ -1,4 +1,5 @@
 #include "main.h"
+int data = 0;
 /**
  * main - monty interpeter
  * @args: number of arguments
@@ -9,11 +10,11 @@ int main(int argc,char **argv)
 {
     char buffer[1024];
 
-    FILE *file;
+    FILE *file = NULL;
 
-    char **commands;
+    char **commands = NULL;
 
-    stack_t *stack;
+    stack_t *stack = NULL;
 
     unsigned int line_number = 1;
 
@@ -37,12 +38,15 @@ int main(int argc,char **argv)
             fprintf(stderr, "Error: malloc failed\n");
             return (EXIT_FAILURE);   
         }
-        data  = atoi(commands[1]);
+        if (commands[1])
+        {
+            data  = atoi(commands[1]);
         if (data == 0 && commands[1][0] != '0')
         {
-            fprintf(stderr, "L%d: usage: push integer", line_number);
+            fprintf(stderr, "L%d: usage: push integer\n", line_number);
             free2Darray(commands);
             return (EXIT_FAILURE);
+        }
         }
         execute(commands[0], &stack, line_number);
         line_number++;

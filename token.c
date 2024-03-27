@@ -19,7 +19,7 @@ char **token(char *str)
 
     while (tkn)
     {
-        commands[i] = strdup(tkn);
+        commands[i] = _strdup(tkn);
         if (commands[i] == NULL)
         {
             free2Darray(commands);
