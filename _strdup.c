@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * _strdup - strdup
  * @str: the buffer string to be dupped

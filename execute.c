@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * execute - executes the passed command
  * @opcode: string of the required command
@@ -13,6 +13,7 @@ void execute(char *opcode, stack_t **stack, unsigned int line_number)
 	instruction_t instructions[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
 	};
 
 	for (i = 0; i < sizeof(instructions) / sizeof(instruction_t); i++)

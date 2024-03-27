@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * pall - print all the stack starting from top
  * @stack: linked list of the data as stack

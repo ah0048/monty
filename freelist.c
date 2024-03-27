@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
 * freelist -  free the linked list
 * @stack: head pointer

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * free2Darray - free 2D array
  * @str: array of strings

@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * push - adds new node at the end of the list
  * @stack: linked list of the data as stack

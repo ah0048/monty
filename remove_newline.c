@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * remove_newline - removes newline character
  * @str: string

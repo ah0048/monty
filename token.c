@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * token - tokenizes the buffer
  * @str: the buffer string
