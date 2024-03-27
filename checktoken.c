@@ -16,5 +16,5 @@ int checktoken(char **commands)
 		free2Darray(commands);
 		return (EXIT_SUCCESS);
 	}
-    return (2);
+	return (2);
 }
