@@ -22,7 +22,7 @@ void stack_div(stack_t **stack, unsigned int line_number)
         exit(EXIT_FAILURE);
     }
 	second = first->next;
-	second->n = second->n - first->n;
+	second->n = second->n / first->n;
 	second->prev = NULL;
 	free(first);
 	*stack = second;
