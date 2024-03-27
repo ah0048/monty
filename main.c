@@ -31,11 +31,7 @@ int main(int argc, char **argv)
 	}
 	while (fgets(buffer, sizeof(buffer), file) != NULL)
 	{
-		if (buffer[0] == '\n')
-			continue;
 		remove_newline(buffer);
-		if (buffer == NULL)
-			continue;
 		commands = token(buffer);
 		if (commands == NULL)
 		{
@@ -47,7 +43,7 @@ int main(int argc, char **argv)
 			free2Darray(commands);
 			continue;
 		}
-		if (commands[1])
+		if (strcmp(commands[0], "push") == 0 && commands[1])
 		{
 			data  = atoi(commands[1]);
 			if (data == 0 && commands[1][0] != '0')

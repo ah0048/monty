@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (newNode == NULL)
 	{
-		fprintf(stderr, "L%d: usage: push integer", line_number);
+		fprintf(stderr, "L%d: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	newNode->n = data;
@@ -24,9 +24,8 @@ void push(stack_t **stack, unsigned int line_number)
 		*stack = newNode;
 		return;
 	}
-	while (current->next)
-		current = current->next;
-	current->next = newNode;
-	newNode->next = NULL;
-	newNode->prev = current;
+	current->prev = newNode;
+	newNode->next = current;
+	newNode->prev = NULL;
+	*stack = newNode;
 }
