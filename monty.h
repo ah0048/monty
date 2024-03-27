@@ -46,4 +46,5 @@ void nop(stack_t **stack, unsigned int line_number);
 char *_strdup(const char *str);
 void freelist(stack_t *stack);
 int checkpush(char **commands, unsigned int line_number);
+int checktoken(char **commands);
 #endif

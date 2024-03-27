@@ -2,7 +2,7 @@
 int data = 0;
 /**
  * main - monty interpeter
- * @args: number of arguments
+ * @argc: number of arguments
  * @argv: the arguments
  * Return: exit status
  */
@@ -33,27 +33,16 @@ int main(int argc, char **argv)
 	{
 		remove_newline(buffer);
 		commands = token(buffer);
-		if (commands == NULL)
+		if (checktoken(commands) == EXIT_SUCCESS)
 		{
-			fprintf(stderr, "Error: malloc failed\n");
-			return (EXIT_FAILURE);
-		}
-		if (commands[0] == NULL)
-		{
-			free2Darray(commands);
 			line_number++;
 			continue;
 		}
 		if (checkpush(commands, line_number) == EXIT_FAILURE)
-		{
-			fclose(file);
-			if (stack)
-			freelist(stack);
 			return (EXIT_FAILURE);
-		}
-			execute(commands[0], &stack, line_number);
-			line_number++;
-			free2Darray(commands);
+		execute(commands[0], &stack, line_number);
+		line_number++;
+		free2Darray(commands);
 	}
 		fclose(file);
 		freelist(stack);
