@@ -33,7 +33,7 @@ int main(int argc, char **argv)
 	{
 		remove_newline(buffer);
 		commands = token(buffer);
-		if (checktoken(commands) == EXIT_SUCCESS)
+		if (checktoken(commands) == EXIT_SUCCESS || commands[0][0] == '#')
 		{
 			line_number++;
 			continue;
