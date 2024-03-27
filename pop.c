@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * push - adds new node at the end of the list
+ * pop - removes the top element of the stack.
  * @stack: linked list of the data as stack
  * @line_number: line number
  * Return: void
