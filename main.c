@@ -44,14 +44,29 @@ int main(int argc, char **argv)
 			line_number++;
 			continue;
 		}
-		if (strcmp(commands[0], "push") == 0 && commands[1])
+		if (strcmp(commands[0], "push") == 0)
 		{
-			data  = atoi(commands[1]);
-			if (data == 0 && commands[1][0] != '0')
+			if (commands[1] == NULL)
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", line_number);
 				free2Darray(commands);
+				fclose(file);
+				if (stack)
+				freelist(stack);
 				return (EXIT_FAILURE);
+			}
+			else
+			{
+				data  = atoi(commands[1]);
+				if (data == 0 && commands[1][0] != '0')
+					{
+						fprintf(stderr, "L%d: usage: push integer\n", line_number);
+						free2Darray(commands);
+						fclose(file);
+						if (stack)
+						freelist(stack);
+						return (EXIT_FAILURE);
+					}
 			}
 		}
 			execute(commands[0], &stack, line_number);
