@@ -6,28 +6,28 @@
  */
 char **token(char *str)
 {
-    char *tkn = strtok(str, " ");
+	char *tkn = strtok(str, " ");
 
-    int i = 0;
+	int i = 0;
 
-    char **commands = (char **)malloc(100 * sizeof(char *));
+	char **commands = (char **)malloc(100 * sizeof(char *));
 
-    if (commands == NULL)
-    {
-        return (NULL);
-    }
+	if (commands == NULL)
+	{
+		return (NULL);
+	}
 
-    while (tkn)
-    {
-        commands[i] = _strdup(tkn);
-        if (commands[i] == NULL)
-        {
-            free2Darray(commands);
-            return (NULL);
-        }
-        tkn = strtok(NULL, " ");
-        i++;
-    }
-    commands[i] = NULL;
-        return (commands);
+	while (tkn)
+	{
+		commands[i] = _strdup(tkn);
+		if (commands[i] == NULL)
+		{
+			free2Darray(commands);
+			return (NULL);
+		}
+		tkn = strtok(NULL, " ");
+		i++;
+	}
+	commands[i] = NULL;
+	return (commands);
 }

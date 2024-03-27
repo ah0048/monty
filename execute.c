@@ -8,21 +8,21 @@
  */
 void execute(char *opcode, stack_t **stack, unsigned int line_number)
 {
-    long unsigned int i = 0;
+	unsigned long int i = 0;
 
-    instruction_t instructions[] = {
-    {"push", push},
-    {"pall", pall},
-    };
+	instruction_t instructions[] = {
+		{"push", push},
+		{"pall", pall},
+	};
 
-    for (i = 0; i < sizeof(instructions) / sizeof(instruction_t); i++)
-    {
-        if (strcmp(opcode, instructions[i].opcode) == 0)
-        {
-            instructions[i].f(stack, line_number);
-            return;
-        }
-    }
-    fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
-    exit(EXIT_FAILURE);
+	for (i = 0; i < sizeof(instructions) / sizeof(instruction_t); i++)
+	{
+		if (strcmp(opcode, instructions[i].opcode) == 0)
+		{
+			instructions[i].f(stack, line_number);
+			return;
+		}
+	}
+	fprintf(stderr, "L%d: unknown instruction %s\n", line_number, opcode);
+	exit(EXIT_FAILURE);
 }

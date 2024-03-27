@@ -6,7 +6,8 @@
  */
 void remove_newline(char *str)
 {
-    char *last_char = strchr(str, '\n');
-    if (last_char)
-        *last_char = '\0';
+	char *last_char = strchr(str, '\n');
+
+	if (last_char)
+		*last_char = '\0';
 }

@@ -6,11 +6,11 @@
  */
 char *_strdup(const char *str)
 {
-    size_t len = strlen(str) + 1;
+	size_t len = strlen(str) + 1;
 
-    char *dup = (char *)malloc(len * sizeof(char));
+	char *dup = (char *)malloc(len * sizeof(char));
 
-    if (dup == NULL)
-        return (NULL);
-    return (strcpy(dup, str));
+	if (dup == NULL)
+		return (NULL);
+	return (strcpy(dup, str));
 }
