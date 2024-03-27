@@ -1,0 +1,26 @@
+#include "main.h"
+/**
+ * execute - executes the passed command
+ * @opcode: string of the required command
+ * @stack: linked list of the data as stack
+ * @line_number: line number
+ * Return: void
+ */
+void execute(char *opcode, stack_t **stack, unsigned int line_number)
+{
+    long unsigned int i = 0;
+
+    instruction_t instructions[] = {
+    {"push", push},
+    {"pall", pall},
+    };
+
+    for (i = 0; i < sizeof(instructions) / sizeof(instruction_t); i++)
+    {
+        if (strcmp(opcode, instructions[i].opcode) == 0)
+        {
+            instructions[i].f(stack, line_number);
+            return;
+        }
+    }
+}
