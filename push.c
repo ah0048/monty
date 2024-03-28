@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * push - adds new node at the end of the list
+ * push - adds new node at the start of the list
  * @stack: linked list of the data as stack
  * @line_number: line number
  * Return: void
