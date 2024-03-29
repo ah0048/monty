@@ -9,6 +9,8 @@ int checkpush(char **commands, unsigned int line_number)
 {
 	int i = 1;
 
+	char *ptr = NULL;
+
 	if (strcmp(commands[0], "push") == 0)
 	{
 		if (commands[1] == NULL)
@@ -19,8 +21,8 @@ int checkpush(char **commands, unsigned int line_number)
 		}
 		else
 		{
-			data  = atoi(commands[1]);
-			if (data == 0 && commands[1][0] != '0')
+			data  = strtol(commands[1], &ptr, 10);
+			if (*ptr != '\0')
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", line_number);
 				free2Darray(commands);
